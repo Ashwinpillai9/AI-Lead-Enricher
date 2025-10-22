@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
-import yaml
 import re
 
+import yaml
 import json
 import pandas as pd
 
@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+# Load configuration and environment variables
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG = yaml.safe_load((BASE_DIR / "config.yaml").read_text(encoding="utf-8"))
@@ -68,8 +69,11 @@ def enrich_lead(job_title: str, comment: str) -> dict:
 
 
 def assign_team(urgency: str | None, persona: str | None) -> str:
-    Curr_urgency = (urgency or "").strip().title()
-    Curr_persona = (persona or "").strip().title()
+    #if no values provided, set to empty string
+    Curr_urgency = (urgency or "").strip().title() 
+    Curr_persona = (persona or "").strip().title() 
+
+    # Group Assignment logic
     if Curr_urgency == "High" and Curr_persona == "Decision Maker":
         return "Strategic Sales"
     if Curr_urgency == "High" and Curr_persona == "Practitioner":
@@ -91,7 +95,7 @@ def main() -> None:
                 "email": str(row["email"]),
                 "job_title": str(row["job_title"]),
                 "comment": str(row["comment"]),
-                **enriched,
+                **enriched, # Merge enriched fields
                 "assigned_team": assign_team(enriched.get("urgency"), enriched.get("persona_type")),
             }
         )
