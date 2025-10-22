@@ -27,8 +27,3 @@ MVP pipeline (one-command flow):
 ```
 python src/processdata.py
 ```
-
-Alternate entry point (modular script):
-```
-python src/lead_router.py
-```
