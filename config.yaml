@@ -2,5 +2,5 @@ input_csv_path: data/leads.csv
 output_json_path: outputs/enriched_leads.json
 default_assigned_team: Unassigned
 gemini:
-  model: gemini-2.0-flash
+  model: gemini-2.5-flash
   request_timeout_seconds: 30
