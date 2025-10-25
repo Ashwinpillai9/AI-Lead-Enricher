@@ -1,6 +1,6 @@
 # AI-Powered Lead Enrichment & Routing
 
-## 1. Business Summary (for Marketing Operations)
+## 1. Business Summary
 Marketing team receives thousands of "Contact Us" leads that currently need manual review. This tool automates that triage end to end. It skims through each lead's message, classifies how urgent the request is, identifies who is reaching out, and routes the lead automatically. Teams save roughly 30-40 hours per week of manual sorting, respond faster to high-value opportunities, and improve routing accuracy by grounding every decision in consistent AI-backed rules. Leadership also gains instant visibility into key go-to-market metrics such as high-urgency lead volume, decision-maker engagement, and team workload.
 
 Key business impact:
@@ -9,7 +9,8 @@ Key business impact:
 - Accuracy: Manual ~80% vs AI ~90% (AI applies consistent logic; no reviewer fatigue).
 
 
-## 2. How It Works (Plain Language)
+## 2. How It Works (Click on the Image below to see a demo video)
+[![Walk-Through](https://github.com/user-attachments/assets/ccec57c2-77d0-42cc-89f7-534740eee22c)](https://www.youtube.com/watch?v=3SFRvY3632I)
 1. Reads new leads from the `leads.csv` spreadsheet.
 2. Sends the job title and comment to Google's Gemini AI to understand urgency, persona type, and intent.
 3. Applies business rules to select the best follow-on team.
@@ -63,6 +64,10 @@ This minimizes hallucinations, keeps responses consistent, and ensures we can pa
    ```
 
 ## 5. Additional Feature: Lead Intelligence Dashboard
+<img width="1905" height="921" alt="image" src="https://github.com/user-attachments/assets/ccec57c2-77d0-42cc-89f7-534740eee22c" />
+<img width="1834" height="541" alt="image" src="https://github.com/user-attachments/assets/8d132b59-74b1-45df-b5db-09478a6f12ae" />
+
+
 - **What it does:** Provides a real-time, interactive view of enriched leads, including urgency/persona distributions, routing breakdowns, and the full enriched dataset. The dashboard also auto-generates data if it has not yet been produced.
 - **Why it was added:** Marketing stakeholders need fast, visual insights without sifting through raw JSON. The dashboard delivers the KPIs that matter (e.g., count of high-urgency decision makers) and a quick download option for campaign follow-up, reducing reliance on analysts.
 - **How it works:** Streamlit loads `outputs/enriched_leads.json`, or triggers the enrichment script if the file is missing. Plotly renders histograms for high-level trends, while the data table shows the detailed AI-enriched records. A download button provides the JSON if teams want to feed the results into other systems.
