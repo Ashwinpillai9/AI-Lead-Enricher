@@ -5,8 +5,8 @@ Marketing team receives thousands of "Contact Us" leads that currently need manu
 
 Key business impact:
 - Time: Manual ~165 hrs/month vs AI ~3 hrs/month (assumes ~2 min/lead, 5,000 leads/month).
-- Cost: Manual ~$3,500/month vs AI ~$1 (Gemini API) (assumes $23/hour and existing infra).
-- Accuracy: Manual ~80% vs AI ~90% (AI applies consistent logic; no reviewer fatigue).
+- Cost: Manual ~€3,300/month vs AI ~€0.77 (Gemini API) (assumes €20/hour and existing infra).
+- Accuracy: Manual ~80% vs AI ~93% (AI applies consistent logic; no reviewer fatigue).
 
 
 ## 2. How It Works (Click on the Image below to see a demo video)
